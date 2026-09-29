@@ -261,10 +261,10 @@ void PrintElement(vm_element* e) {
             printf("STRING_LIT | %u", e->value.strLit.address);
             break;
         case STRING_REF:
-            printf("STRING_REF | 0x%p", e->value.memPtr);
+            printf("STRING_REF | %p", (void *) e->value.memPtr);
             break;
         case ARRAY_REF:
-            printf("ARRAY_REF | 0x%p", e->value.memPtr);
+            printf("ARRAY_REF | %p", (void *) e->value.memPtr);
             break;
         default:
             printf("UNKNOWN    | %#x", e->value.uint32);
@@ -377,6 +377,5 @@ void PrintThreadState(vm_cpu* vm) {
     PrintCallStack(vm->localScope);
     printf("\n");
 }
-
 
 

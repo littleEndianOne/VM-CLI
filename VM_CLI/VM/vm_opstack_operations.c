@@ -25,7 +25,7 @@ void FreeOpstack(vm_element* stackPtr) {
     Pushes a stack element (variable) onto the operand stack.
     System error: STACK_OVERFLOW - Stack memory allocation is full.
  */
-void inline OpStackPush(vm_cpu* vm, vm_element e) {
+inline void OpStackPush(vm_cpu* vm, vm_element e) {
     ++vm->sp; //increment the stack pointer.
     #ifdef DEV_ERROR_CHECKING
     if (vm->sp == vm->stackSize)

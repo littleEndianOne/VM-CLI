@@ -4,14 +4,14 @@
 #include "../VM/vm_opstack_operations.h"
 #include "../VM/vm_progmem_operations.h"
 
-void static inline OpCode_JMP(vm_cpu* vm){
+static inline void OpCode_JMP(vm_cpu* vm){
     union TypesUnion address;
     address.bytes.low = NextCode(vm); //little endian
     address.bytes.midLow = NextCode(vm);
     vm->pc = address.uint16;// unconditionally jump to provided address
 }
 
-void static inline OpCode_JMPT(vm_cpu* vm){
+static inline void OpCode_JMPT(vm_cpu* vm){
     union TypesUnion address;
     address.bytes.low = NextCode(vm); //little endian
     address.bytes.midLow = NextCode(vm);
@@ -20,7 +20,7 @@ void static inline OpCode_JMPT(vm_cpu* vm){
     }
 }
 
-void static inline OpCode_JMPF(vm_cpu* vm){
+static inline void OpCode_JMPF(vm_cpu* vm){
     union TypesUnion address;
     address.bytes.low = NextCode(vm); //little endian
     address.bytes.midLow = NextCode(vm);

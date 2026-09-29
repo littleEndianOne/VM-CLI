@@ -1,6 +1,6 @@
 #include "../VM/vm_cpu.h"
 
-#include <stdint-gcc.h>
+#include <stdint.h>
 
 #include "../VM/vm_array_operations.h"
 #include "../VM/vm_event_buffer.h"
@@ -16,7 +16,7 @@
 #include "../VM/vm_string_operations.h"
 #include "../VM/vm_variable_operations.h"
 
-static void inline ExecNextOpCode(vm_cpu *vm); //Stand alone code generation for in-lined function
+static inline void ExecNextOpCode(vm_cpu *vm); //Stand alone code generation for in-lined function
 
 /*Return a pointer to an initialised vm thread.
  * Returns null if a malloc fails.
@@ -34,7 +34,7 @@ vm_cpu* vm_New(uint16_t pc, uint8_t globalsCount,
 		vm->globalsCount = globalsCount;
 		vm->stackSize = stackSize;
 		vm->opcode = 0;
-		vm->errorCode = NONE;
+		vm->errorCode = OK;
 		vm->runState = READY;
 		vm->codeSize = codeSize;
 		vm->eventHandlerCount = eventHandlerCount;
@@ -103,7 +103,7 @@ void vm_Free(vm_cpu *vm) {
 	free(vm);
 }
 
-void inline ExecNextOpCode(vm_cpu *vm) {
+static inline void ExecNextOpCode(vm_cpu *vm) {
 	vm->opcode = NextCode(vm); // fetch next opcode
 	switch (vm->opcode) {
 	case HALT:
@@ -455,4 +455,3 @@ vm_state vm_DebugRun(vm_cpu *vm) {
 	}
 	return vm->runState;
 }
-

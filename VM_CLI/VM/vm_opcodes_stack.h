@@ -13,6 +13,6 @@
 #include "../VM/vm_common.h"
 #include "../VM/vm_opstack_operations.h"
 
-void static inline OpCode_POP(vm_cpu* vm) {
+static inline void OpCode_POP(vm_cpu* vm) {
     OpStackPop(vm);
 }
