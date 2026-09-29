@@ -1,10 +1,9 @@
 #pragma once
 
-#include <stdint-gcc.h>
-#include <sys/Types.h>
+#include <stdint.h>
+#include <sys/types.h>
 #include <string.h>
 #include <malloc.h>
-#include <stdint-gcc.h>
 #include <stdio.h>
 
 #include "../VM/vm_common.h"

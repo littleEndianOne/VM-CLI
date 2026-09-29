@@ -52,5 +52,6 @@ void Inline_PrintStrLit(vm_cpu* vm, uint16_t address, uint8_t length) {
 }
 
 void Inline_PrintStrRef(vm_cpu* vm, char* address) {
+    (void) vm;
     printf("%s", address);
 }

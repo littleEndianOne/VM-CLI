@@ -3,7 +3,7 @@
 #include "../VM/vm_common.h"
 #include "../VM/vm_progmem_operations.h"
 
-void static inline OpCode_SetEventHandler(vm_cpu *vm) {
+static inline void OpCode_SetEventHandler(vm_cpu *vm) {
 	uint8_t eventId = NextCode(vm);
 
 	//Set the handler address in the event handlers array

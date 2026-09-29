@@ -1,7 +1,7 @@
 #pragma once
 
 #include <setjmp.h>
-#include <stdint-gcc.h>
+#include <stdint.h>
 
 
 #define TRUE 1

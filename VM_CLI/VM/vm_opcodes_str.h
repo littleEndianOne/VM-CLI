@@ -6,7 +6,7 @@
 
 /*Read string literal from prog memory into allocated memory and push a ptr to the memory onto the
 stack. */
-void static inline OpCode_STRLIT(vm_cpu* vm) {
+static inline void OpCode_STRLIT(vm_cpu* vm) {
     vm_value value;
 
     //Get the number of characters (first byte)

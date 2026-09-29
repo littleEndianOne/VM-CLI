@@ -184,6 +184,9 @@ void StoreStrRef(vm_cpu* vm, vm_element* varArray, uint8_t address, vm_element s
  * 
  */
 void StoreArrayRef(vm_cpu* vm, vm_element* varArray, uint8_t address, vm_element srcArrayRef) {
+    (void) varArray;
+    (void) address;
+    (void) srcArrayRef;
     SYSTEM_ERROR(NOT_IMPLEMENTED);
     //Copy array to new location.
 }
@@ -239,4 +242,3 @@ void Store(vm_cpu* vm, vm_element* varArray, uint8_t varArraySize, uint8_t addre
     }
 }
     
-

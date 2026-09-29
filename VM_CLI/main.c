@@ -13,7 +13,6 @@
 #include "VM/vm_cpu.h"
 #include <errno.h>
 #include <string.h>
-#include <unistd.h>
 #include "VM/vm_common.h"
 #include "VM Utility/vm_printers.h"
 #include "inline_output.h"
@@ -47,10 +46,7 @@ int main(int argc, char *argv[]) {
 	printf("\n\n--VM CLI--\n");
 
 	if (argc >= 2) {
-		char filePath[2048];
-		getcwd(filePath, sizeof(filePath));
-		strcat(filePath, "\\");
-		strcat(filePath, argv[1]);
+		const char *filePath = argv[1];
 
 		if (argc >= 3) //Command line argument exists at index 2
 				{
@@ -135,4 +131,3 @@ int main(int argc, char *argv[]) {
 
 	return (EXIT_SUCCESS);
 }
-
