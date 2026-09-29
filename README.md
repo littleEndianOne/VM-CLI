@@ -1,5 +1,10 @@
 # VM CLI
 
+## Related projects
+
+- [Assembler](https://github.com/littleEndianOne/Assembler) converts source programs into the bytecode files executed by this CLI.
+- [virtual-machine](https://github.com/littleEndianOne/virtual-machine) provides the C virtual-machine implementation used by this CLI.
+
 Build the command-line VM with GNU Make and GCC:
 
 ```sh
